@@ -1,4 +1,4 @@
-# Frontend Starting Pack
+# Frontend Starter Pack
 
 ## Installation
 
