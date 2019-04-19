@@ -11,7 +11,7 @@
 2. Run this command in the app-directory.
 
    ```sh
-   exec 3<&1;bash <&3 <(curl https://raw.githubusercontent.com/erdiucar/frontend-starting-pack/master/frontend-starting-pack.sh 2> /dev/null)
+   exec 3<&1;bash <&3 <(curl https://raw.githubusercontent.com/erdiucar/frontend-starter-pack/master/frontend-starter-pack.sh 2> /dev/null)
    ```
 
 ---
