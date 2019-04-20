@@ -25,11 +25,6 @@ git init
 echo -e "2/19 ${LCYAN}Building gitignore file... ${NC}"
   > .gitignore # truncates existing file (or creates empty)
   echo 'node_modules
-package-lock.json
-package.json
-.prettierrc.json
-.eslintrc.json
-gulpfile.js
 ' >> .gitignore
 echo
 
