@@ -44,7 +44,7 @@ mkdir "css/libraries"
 mkdir "js"
 mkdir "js/libraries"
 mkdir "img"
-mkdir "fonts"
+mkdir "font"
 mkdir "scss"
 mkdir "scss/layout"
 mkdir "scss/layout/general"
@@ -267,7 +267,7 @@ gulp.task('dist', () => {
         'js/libraries/**',
         '*.html',
         'img/**',
-        'fonts/**',
+        'font/**',
       ],
       {
         base: './',
@@ -304,7 +304,6 @@ gulp.task('serve', gulp.series('watch-files'));
 
 // Default task for multiple tasks
 gulp.task('default', gulp.series('clean', 'build'));
-
 " >> gulpfile.js
 echo
 
@@ -326,7 +325,7 @@ echo '<!DOCTYPE html>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- Title -->
-    <title>Document</title>
+    <title>Frontend Starter Pack</title>
     <!-- /Title -->
 
     <!-- Minified CSS File -->
