@@ -35,7 +35,17 @@ Preparing project files and downloading packages takes a lot of time. This start
 
 When you run the command, bash script works. It downloads the packages and configure the project folder to start to work. When the package downloads are finished, `gulp serve` command runs. The pack configures css and js paths in the index.html file. You can immediately start your project!
 
+## Commands
+
+```sh
+gulp serve
+```
+
 Gulp helps you to minify css and js files. When you type the `gulp serve` in your command line, gulp starts to watch "scss" folder and "main.js" file. If you save the project when "serve" command running, Gulp see your changes on the files and minify all of that.
+
+```sh
+gulp build
+```
 
 When your production is finished, you can type `gulp build` command. It creates the "dist" files in the dist folder (.html files, style.min.css file, app.min.js file, img folder, font folder and libraries).
 
