@@ -1,4 +1,5 @@
 # Frontend Starter Pack
+Preparing project files and downloading packages takes a lot of time. This starter pack allows you to quickly start a frontend project.
 
 ## Installation
 

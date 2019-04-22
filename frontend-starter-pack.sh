@@ -23,6 +23,7 @@ echo
 git init
 
 # Building gitignore file for node_modules
+echo
 echo -e "2/19 ${LCYAN}Building gitignore file... ${NC}"
 > .gitignore # truncates existing file (or creates empty)
 echo 'node_modules
@@ -36,6 +37,7 @@ echo
 npm init -y
 
 # Building pack folders
+echo
 echo -e "4/19 ${LCYAN}Building pack folders and files... ${NC}"
 mkdir "css"
 mkdir "css/libraries"
@@ -166,6 +168,7 @@ echo '{
 echo
 
 # Building prettierrc.json file
+echo
 echo -e "13/19 ${LCYAN}Building your prettierrc.json file... ${NC}"
 > .prettierrc.json # truncates existing file (or creates empty)
 echo '{
@@ -175,11 +178,13 @@ echo '{
 echo
 
 # Gulp packages installation
+echo
 echo -e "14/19 ${LCYAN}Gulp packages installation... ${NC}"
 npm i -D gulp gulp-concat gulp-uglify gulp-rename gulp-sass gulp-babel @babel/core @babel/preset-env gulp-browserify gulp-sourcemaps gulp-clean-css del
 echo
 
 # Building gulp file
+echo
 echo -e "15/19 ${LCYAN}Building gulpfile.js... ${NC}"
 > gulpfile.js # truncates existing file (or creates empty)
 
@@ -304,11 +309,13 @@ gulp.task('default', gulp.series('clean', 'build'));
 echo
 
 # Building main.js file
+echo
 echo -e "16/19 ${LCYAN}Building your main.js file... ${NC}"
 touch js/main.js
 echo
 
 # Building index.html file
+echo
 echo -e "17/19 ${LCYAN}Building your index.html file... ${NC}"
 > index.html # truncates existing file (or creates empty)
 echo '<!DOCTYPE html>
@@ -343,6 +350,7 @@ echo '<!DOCTYPE html>
 echo
 
 # Building style.scss file
+echo
 echo -e "18/19 ${LCYAN}Building your style.scss file... ${NC}"
 > scss/style.scss # truncates existing file (or creates empty)
 
@@ -360,6 +368,7 @@ echo '// ------------------------------ */
 echo
 
 # Building dist folder
+echo
 echo -e "19/19 ${LCYAN}Building the dist folder... ${NC}"
 mkdir "dist"
 gulp build
