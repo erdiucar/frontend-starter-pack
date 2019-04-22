@@ -37,7 +37,7 @@ Preparing project files and downloading packages takes a lot of time. This start
 
 1. The script builds project folders and files (dist-img-font-css-js folders, gitignore file, css files, js files, gulp file, eslintrc.json and prettierrc.json file, index.html file, scss files).
 
-2. The script installs Git, Default Npm, JQuery, Popper.js, Bootstrap, Font Awesome, ESLint & Prettier, Airbnb's JavaScript style guide packages, Prettier's Eslint and gulp packages.
+2. The script installs Git, Default Npm, JQuery, Popper.js, Bootstrap, Font Awesome, ESLint & Prettier, Airbnb's JavaScript style guide packages, Prettier's Eslint and Gulp packages.
 
 ## How it works
 
@@ -47,7 +47,7 @@ When you run the command, bash script works. It downloads the packages and confi
 
 ### Serve
 
-Gulp helps you to minify css and js files. When you type the `gulp serve` in your command line, gulp starts to watch "scss" folder and "main.js" file. If you save the project when "serve" command running, Gulp see your changes on the files and minify all of that.
+Gulp helps you to minify css and js files. When you type the `gulp serve` in your command line, Gulp starts to watch "scss" folder and "main.js" file. If you save the project when "serve" command running, Gulp see your changes on the files and minify all of that.
 
 ```sh
 gulp serve
