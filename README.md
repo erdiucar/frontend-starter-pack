@@ -1,4 +1,8 @@
 # Frontend Starter Pack
+<p align="center">
+  <img width="300" height="300" src="img/frontend-starter-pack-logo.png">
+</p>
+
 Preparing project files and downloading packages takes a lot of time. This starter pack allows you to quickly start a frontend project.
 
 ## Installation
