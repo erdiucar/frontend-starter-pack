@@ -38,7 +38,7 @@ npm init -y
 
 # Building pack folders
 echo
-echo -e "4/19 ${LCYAN}Building pack folders and files... ${NC}"
+echo -e "4/19 ${LCYAN}Building project folders and files... ${NC}"
 mkdir "css"
 mkdir "css/libraries"
 mkdir "js"
@@ -83,7 +83,7 @@ cp node_modules/jquery/dist/jquery.slim.min.js js/libraries/jquery.slim.min.js
 #   esac
 # done
 
-# # Popper.js installation
+# Popper.js installation
 echo
 echo -e "6/19 ${LCYAN}Popper.js installation... ${NC}"
 echo
