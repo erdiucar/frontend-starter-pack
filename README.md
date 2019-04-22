@@ -37,11 +37,15 @@ When you run the command, bash script works. It downloads the packages and confi
 
 ## Commands
 
+### gulp serve
+
 ```sh
 gulp serve
 ```
 
 Gulp helps you to minify css and js files. When you type the `gulp serve` in your command line, gulp starts to watch "scss" folder and "main.js" file. If you save the project when "serve" command running, Gulp see your changes on the files and minify all of that.
+
+### gulp build
 
 ```sh
 gulp build
