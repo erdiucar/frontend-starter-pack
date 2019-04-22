@@ -31,15 +31,15 @@ Preparing project files and downloading packages takes a lot of time. This start
 * [ESLint](https://eslint.org/) and plugins (Airbnb React JavaScript style)
 * [Prettier](https://prettier.io/) and plugins (Airbnb React JavaScript style)
 
-## How it works
-
-When you run the command, bash script works. It downloads the packages and configure the project folder to start to work. When the package downloads are finished, `gulp serve` command runs. The pack configures css and js paths in the index.html file. You can immediately start your project!
-
 ## What happens in the background
 
 1. The script builds project folders and files (dist-img-font-css-js folders, gitignore file, css files, js files, gulp file, eslintrc.json and prettierrc.json file, index.html file, scss files).
 
 2. The script installs Git, Default Npm, JQuery, Popper.js, Bootstrap, Font Awesome, ESLint & Prettier, Airbnb's JavaScript style guide packages, Prettier's Eslint and gulp packages.
+
+## How it works
+
+When you run the command, bash script works. It downloads the packages and configure the project folder to start to work. When the package downloads are finished, `gulp serve` command runs. The pack configures css and js paths in the index.html file. You can immediately start your project!
 
 ## Commands
 
