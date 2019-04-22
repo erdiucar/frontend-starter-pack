@@ -8,13 +8,15 @@ Preparing project files and downloading packages takes a lot of time. This start
 
 ## Getting started
 
-1. Navigate your app directory.
+1. If you don't have [bash](https://git-scm.com/downloads) in your computer, install it.
+
+2. Navigate your app directory.
 
    ```sh
    cd app-directory
    ```
 
-2. Run this command in the app-directory.
+3. Run this command in the app-directory.
 
    ```sh
    exec 3<&1;bash <&3 <(curl https://raw.githubusercontent.com/erdiucar/frontend-starter-pack/master/frontend-starter-pack.sh 2> /dev/null)
