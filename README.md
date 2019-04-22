@@ -37,21 +37,21 @@ When you run the command, bash script works. It downloads the packages and confi
 
 ## Commands
 
-### gulp serve
+### Serve
+
+Gulp helps you to minify css and js files. When you type the `gulp serve` in your command line, gulp starts to watch "scss" folder and "main.js" file. If you save the project when "serve" command running, Gulp see your changes on the files and minify all of that.
 
 ```sh
 gulp serve
 ```
 
-Gulp helps you to minify css and js files. When you type the `gulp serve` in your command line, gulp starts to watch "scss" folder and "main.js" file. If you save the project when "serve" command running, Gulp see your changes on the files and minify all of that.
+### Build
 
-### gulp build
+When your production is finished, you can type `gulp build` command. It creates the "dist" files in the dist folder (.html files, style.min.css file, app.min.js file, img folder, font folder and libraries).
 
 ```sh
 gulp build
 ```
-
-When your production is finished, you can type `gulp build` command. It creates the "dist" files in the dist folder (.html files, style.min.css file, app.min.js file, img folder, font folder and libraries).
 
 ## ESLint and Prettier configuration settings
 
