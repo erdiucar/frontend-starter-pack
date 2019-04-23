@@ -24,14 +24,14 @@ Preparing project files and downloading packages takes a lot of time. This start
 
 ## Packages
 
-* [JQuery](https://jquery.com/)
-* [Bootstrap](https://getbootstrap.com/)
-* [Popper.js](https://popper.js.org/)
-* [Font Awesome](https://fontawesome.com/)
-* [Gulp](https://gulpjs.com/) and plugins
-* [Sass](https://sass-lang.com/)
-* [ESLint](https://eslint.org/) and plugins (Airbnb React JavaScript style)
-* [Prettier](https://prettier.io/) and plugins (Airbnb React JavaScript style)
+- [JQuery](https://jquery.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Popper.js](https://popper.js.org/)
+- [Font Awesome](https://fontawesome.com/)
+- [Gulp](https://gulpjs.com/) and plugins
+- [Sass](https://sass-lang.com/)
+- [ESLint](https://eslint.org/) and plugins (Airbnb React JavaScript style)
+- [Prettier](https://prettier.io/) and plugins (Airbnb React JavaScript style)
 
 ## What happens in the background
 
@@ -47,7 +47,7 @@ When you run the command, bash script works. It downloads the packages and confi
 
 ### Serve
 
-Gulp helps you to minify css and js files. When you type the `gulp serve` in your command line, Gulp starts to watch "scss" folder and "main.js" file. If you save the project when "serve" command running, Gulp see your changes on the files and minify all of that.
+Gulp helps you to minify css and js files. When you type the `gulp serve` in your command line, Gulp starts to watch "scss" folder and "main.js" file. If you save the project when "serve" command running, Gulp sees your changes on the files and minifies all of that.
 
 ```sh
 gulp serve
@@ -70,4 +70,5 @@ I use the default configuration settings prepared by Paulo Ramos. I only add "JQ
 [MIT](LICENSE)
 
 ---
+
 This script was inspired by Paulo Ramos's [script](https://github.com/paulolramos/eslint-prettier-airbnb-react).
