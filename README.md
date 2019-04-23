@@ -8,7 +8,7 @@ Preparing project files and downloading packages takes a lot of time. This start
 
 ## Getting started
 
-1. If you don't have [bash](https://git-scm.com/downloads) in your computer, install it.
+1. If you don't have [Bash](https://git-scm.com/downloads) and [Node.js](https://nodejs.org/en/) in your computer, install them.
 
 2. Navigate your app directory.
 
