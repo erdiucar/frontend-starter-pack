@@ -27,7 +27,7 @@ Preparing project files and downloading packages takes a lot of time. This start
 - [JQuery](https://jquery.com/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Popper.js](https://popper.js.org/)
-- [Font Awesome](https://fontawesome.com/)
+- [Font Awesome](https://fontawesome.com/) (Optional)
 - [Gulp](https://gulpjs.com/) and plugins
 - [Sass](https://sass-lang.com/)
 - [ESLint](https://eslint.org/) and plugins (Airbnb React JavaScript style)
@@ -47,7 +47,7 @@ When you run the command, bash script works. It downloads the packages and confi
 
 ### Serve
 
-Gulp helps you to minify css and js files. When you type the `gulp serve` in your command line, Gulp starts to watch "scss" folder and "main.js" file. If you save the project when "serve" command running, Gulp sees your changes on the files and minifies all of that.
+Gulp helps you to minify css and js files. When you type the `gulp serve` in your command line, Gulp starts to watch **scss** folder and **main.js** file. If you save the project when *serve* command running, Gulp sees your changes on the files and minifies all of that.
 
 ```sh
 gulp serve

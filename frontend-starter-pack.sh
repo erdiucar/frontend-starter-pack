@@ -12,18 +12,30 @@ NC='\033[0m' # No Color
 # Perform Configuration
 # ----------------------
 
-# Starting script
+# Icon font choice
+echo -e "${RED}Do you want to install Font Awesome to your project? ${NC}"
+select iconFontChoise in "Yes" "No"; do
+  case $iconFontChoise in
+    Yes) 
+      fontAwesomeInstalled=true
+      break ;;
+    No) 
+      fontAwesomeInstalled=false
+      break ;;
+  esac
+done
 echo
+
+# Starting script
 echo -e "${GREEN}Configuring your frontend development environment... ${NC}"
+echo
 
 # Git installation
-echo
 echo -e "1/19 ${LCYAN}Git installation... ${NC}"
-echo
 git init
+echo
 
 # Building gitignore file for node_modules
-echo
 echo -e "2/19 ${LCYAN}Building gitignore file... ${NC}"
 > .gitignore # truncates existing file (or creates empty)
 echo 'node_modules
@@ -31,13 +43,11 @@ echo 'node_modules
 echo
 
 # Default Npm installation
-echo
 echo -e "3/19 ${LCYAN}Default Npm installation... ${NC}"
-echo
 npm init -y
-
-# Building pack folders
 echo
+
+# Building pack folders and files
 echo -e "4/19 ${LCYAN}Building project folders and files... ${NC}"
 mkdir "css"
 mkdir "css/libraries"
@@ -60,74 +70,52 @@ touch "scss/utilities/_variables.scss"
 echo
 
 # JQuery installation
-echo
 echo -e "5/19 ${LCYAN}JQuery installation... ${NC}"
-echo
 npm i -D jquery
-#isJqueryInstalled=true 
 cp node_modules/jquery/dist/jquery.slim.min.js js/libraries/jquery.slim.min.js
-
-# echo -e "${RED}Do you want to install JQuery in your project?${NC}"
-# select jqueryCommandChoise in "Yes" "No"; do
-#   case $jqueryCommandChoise in
-#     Yes) 
-#       echo
-#       echo -e "4/19 ${LCYAN}JQuery installation... ${NC}"
-#       npm i -D jquery
-#       isJqueryInstalled=true 
-#       cp node_modules/jquery/dist/jquery.min.js js/jquery.min.js
-#       break ;;
-#     No) 
-#       isJqueryInstalled=false
-#       break ;;
-#   esac
-# done
+echo
 
 # Popper.js installation
-echo
 echo -e "6/19 ${LCYAN}Popper.js installation... ${NC}"
-echo
 npm i -D popper.js
-#isPopperInstalled=true
 cp node_modules/popper.js/dist/umd/popper.min.js js/libraries/popper.min.js
+echo
 
 # Bootstrap installation
-echo
 echo -e "7/19 ${LCYAN}Bootstrap installation... ${NC}"
-echo
 npm i -D bootstrap
-#isBootstrapInstalled=true
 cp node_modules/bootstrap/dist/css/bootstrap.min.css css/libraries/bootstrap.min.css
 cp node_modules/bootstrap/dist/js/bootstrap.min.js js/libraries/bootstrap.min.js
+echo
 
 # Font Awesome installation
+if $fontAwesomeInstalled
+then
+  echo -e "8/19 ${LCYAN}Font Awesome installation... ${NC}"
+  npm i -D @fortawesome/fontawesome-free
+  cp node_modules/@fortawesome/fontawesome-free/css/all.min.css css/libraries/all.min.css
+else
+  echo -e "8/19 ${LCYAN}Font Awesome doesn't installed... ${NC}"
+fi
 echo
-echo -e "8/19 ${LCYAN}Fontawesome installation... ${NC}"
-echo
-npm i -D @fortawesome/fontawesome-free
-#isFontawesomeInstalled=true
-cp node_modules/@fortawesome/fontawesome-free/css/all.min.css css/libraries/all.min.css
 
 # ESLint & Prettier installation
-echo
 echo -e "9/19 ${LCYAN}ESLint & Prettier installation... ${NC}"
-echo
 npm i -D eslint prettier
+echo
+
 
 # Airbnb's JavaScript style guide packages installation
-echo
 echo -e "10/19 ${LCYAN}Airbnb's JavaScript style guide packages installation... ${NC}"
-echo
 npm i -D eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-import eslint-plugin-react babel-eslint
+echo
 
 # Prettier's Eslint packages installation
-echo
 echo -e "11/19 ${LCYAN}Prettier's Eslint packages installation... ${NC}"
-echo
 npm i -D eslint-config-prettier eslint-plugin-prettier
+echo
 
 # Building eslintrc.json file
-echo
 echo -e "12/19 ${LCYAN}Building eslintrc.json file...${NC}"
 > ".eslintrc.json" # truncates existing file (or creates empty)
 
@@ -168,7 +156,6 @@ echo '{
 echo
 
 # Building prettierrc.json file
-echo
 echo -e "13/19 ${LCYAN}Building your prettierrc.json file... ${NC}"
 > .prettierrc.json # truncates existing file (or creates empty)
 echo '{
@@ -178,13 +165,11 @@ echo '{
 echo
 
 # Gulp packages installation
-echo
 echo -e "14/19 ${LCYAN}Gulp packages installation... ${NC}"
-npm i -D gulp gulp-concat gulp-uglify gulp-rename gulp-sass gulp-babel @babel/core @babel/preset-env gulp-browserify gulp-sourcemaps gulp-clean-css del
+npm i -D gulp gulp-concat gulp-uglify gulp-rename gulp-sass gulp-babel @babel/core @babel/preset-env gulp-sourcemaps gulp-clean-css del
 echo
 
 # Building gulp file
-echo
 echo -e "15/19 ${LCYAN}Building gulpfile.js... ${NC}"
 > gulpfile.js # truncates existing file (or creates empty)
 
@@ -197,7 +182,6 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
-const browserify = require('gulp-browserify');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const maps = require('gulp-sourcemaps');
@@ -223,11 +207,6 @@ gulp.task('concat-script', () => {
 gulp.task('minify-script', () => {
   return gulp
     .src('js/app.js')
-    .pipe(
-      browserify({
-        insertGlobals: true,
-      })
-    )
     .pipe(maps.init())
     .pipe(uglify())
     .pipe(rename('app.min.js'))
@@ -303,18 +282,15 @@ gulp.task(
 gulp.task('serve', gulp.series('watch-files'));
 
 // Default task for multiple tasks
-gulp.task('default', gulp.series('clean', 'build'));
-" >> gulpfile.js
+gulp.task('default', gulp.series('clean', 'build'));" >> gulpfile.js
 echo
 
 # Building main.js file
-echo
 echo -e "16/19 ${LCYAN}Building your main.js file... ${NC}"
 touch js/main.js
 echo
 
 # Building index.html file
-echo
 echo -e "17/19 ${LCYAN}Building your index.html file... ${NC}"
 > index.html # truncates existing file (or creates empty)
 echo '<!DOCTYPE html>
@@ -328,9 +304,14 @@ echo '<!DOCTYPE html>
     <title>Frontend Starter Pack</title>
     <!-- /Title -->
 
-    <!-- Minified CSS File -->
-    <link rel="stylesheet" href="css/libraries/all.min.css" />
-    <link rel="stylesheet" href="css/libraries/bootstrap.min.css" />
+    <!-- Minified CSS File -->' > index.html
+
+if $fontAwesomeInstalled 
+then    
+  echo '    <link rel="stylesheet" href="css/libraries/all.min.css" />' >> index.html
+fi      
+
+echo '    <link rel="stylesheet" href="css/libraries/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.min.css" />
     <!-- /Minified CSS File -->
   </head>
@@ -349,7 +330,6 @@ echo '<!DOCTYPE html>
 echo
 
 # Building style.scss file
-echo
 echo -e "18/19 ${LCYAN}Building your style.scss file... ${NC}"
 > scss/style.scss # truncates existing file (or creates empty)
 
@@ -367,19 +347,16 @@ echo '// ------------------------------ */
 echo
 
 # Building dist folder
-echo
 echo -e "19/19 ${LCYAN}Building the dist folder... ${NC}"
 mkdir "dist"
 gulp build
 echo
 
 # Finishing the script
-echo
 echo -e "${GREEN}Frontend Starter Pack installation is finished!${NC}"
 echo
 
 # Start watching the project
-echo
 echo -e "${LCYAN}Starting to watch the project with gulp... ${NC}"
 echo
 gulp serve
